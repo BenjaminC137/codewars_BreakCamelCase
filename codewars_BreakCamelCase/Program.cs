@@ -1,24 +1,27 @@
 ﻿using System;
 using System.Linq;
+using System.Collections;
+using System.Text;
 
 namespace codewars_BreakCamelCase
 {
     class Program
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine(BreakCamelCase("helloWorld!"));
-        }
+         static void Main(string[] args)
+         {
+            Console.WriteLine(BreakCamelCase("camelCasingTest"));
+         }
         
          public static string BreakCamelCase(string str)
-          {
-          //  foreach(char letter in str){
-            
-          //}
-            
-            str.Where(x => x.IsUpper);            
-            
-            return "balls";
+          {       
+            StringBuilder brokenString = new StringBuilder();
+            foreach(var ch in str){
+                if(char.IsUpper(ch)){
+                    brokenString.Append(" ");
+                }
+                brokenString.Append(ch);
+            }            
+            return brokenString.ToString();
           }
     }
 }
